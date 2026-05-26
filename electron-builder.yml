@@ -11,10 +11,9 @@ win:
     - target: nsis
       arch:
         - x64
-  icon: resources/icon.ico
   publish:
     - provider: github
-      owner: panorama-app
+      owner: magiclu-creator
       repo: panorama
 nsis:
   artifactName: ${name}-${version}-setup.${ext}
@@ -24,22 +23,17 @@ nsis:
   oneClick: false
   perMachine: false
   allowToChangeInstallationDirectory: true
-  installerIcon: resources/icon.ico
-  uninstallerIcon: resources/icon.ico
-  installerHeaderIcon: resources/icon.ico
 mac:
   category: public.app-category.productivity
-  icon: resources/icon.icns
   target:
     - dmg
     - zip
 linux:
-  icon: resources/icon.png
   target:
     - AppImage
     - deb
   category: Office
 publish:
   provider: github
-  owner: panorama-app
+  owner: magiclu-creator
   repo: panorama
