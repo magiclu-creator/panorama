@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #FF8C00;
+  --color-primary-hover: #E67E00;
+  --color-secondary: #1E3A5F;
+  --color-secondary-hover: #2A4F7A;
+  --color-accent: #52C41A;
+  --sidebar-width: 240px;
+  --sidebar-collapsed-width: 64px;
+  --header-height: 56px;
+  --bg-page: #F5F5F5;
+  --bg-card: #FFFFFF;
+  --bg-container: #FFFFFF;
+  --text-primary: #333333;
+  --text-secondary: #8C8C8C;
+  --border-color: #F0F0F0;
+}
+
+[data-theme="dark"] {
+  --bg-page: #141414;
+  --bg-card: #1F1F1F;
+  --bg-container: #1F1F1F;
+  --text-primary: #E8E8E8;
+  --text-secondary: #8C8C8C;
+  --border-color: #303030;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Ant Design overrides */
+.ant-layout {
+  height: 100%;
+}
+
+.ant-layout-sider {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Custom utility classes */
+.page-container {
+  padding: 24px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-secondary);
+}
+
+.card-shadow {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0.02);
+}
+
+[data-theme="dark"] .card-shadow {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 6px -1px rgba(0, 0, 0, 0.15), 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* Status badges */
+.status-pending { color: #8c8c8c; }
+.status-in_progress { color: #1890ff; }
+.status-completed { color: #52c41a; }
+.status-cancelled { color: #ff4d4f; }
+
+/* Priority badges */
+.priority-low { color: #8c8c8c; }
+.priority-medium { color: #1890ff; }
+.priority-high { color: #faad14; }
+.priority-urgent { color: #ff4d4f; }
+
+/* Dashboard widget cards */
+.dashboard-stat-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.dashboard-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .dashboard-stat-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Onboarding modal */
+.onboarding-step {
+  text-align: center;
+  padding: 24px 0;
+}
+
+.onboarding-step .anticon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
