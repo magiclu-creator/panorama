@@ -203,7 +203,7 @@ function AIAssistant() {
                 maxWidth: '80%',
                 padding: '8px 12px',
                 borderRadius: 8,
-                backgroundColor: msg.role === 'user' ? '#FF8C00' : '#F0F0F0',
+                backgroundColor: msg.role === 'user' ? 'var(--color-primary)' : 'var(--bg-elevated)',
                 color: msg.role === 'user' ? '#fff' : '#333',
                 whiteSpace: 'pre-wrap',
                 fontSize: 14,

@@ -6,6 +6,13 @@ import { initAutoUpdater, checkForUpdates, downloadUpdate, installUpdate } from 
 import { setApiKey } from './services/ai.service'
 import { startReminderEngine } from './services/reminder.service'
 
+// Fix GPU process crash on Windows Server / RDP environments
+app.disableHardwareAcceleration()
+app.commandLine.appendSwitch('no-zygote')
+app.commandLine.appendSwitch('no-sandbox')
+app.commandLine.appendSwitch('disable-gpu')
+app.commandLine.appendSwitch('disable-software-rasterizer')
+
 let mainWindow: BrowserWindow | null = null
 
 function isDev(): boolean {

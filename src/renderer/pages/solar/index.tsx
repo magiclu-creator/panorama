@@ -76,7 +76,7 @@ function Solar() {
   return (
     <div className="page-container">
       <div className="page-header">
-        <Title level={3} style={{ margin: 0, color: '#1E3A5F' }}>光伏项目管理</Title>
+        <Title level={3} style={{ margin: 0, color: 'var(--text-primary)' }}>光伏项目管理</Title>
         <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
           <Segmented
             value={viewMode}

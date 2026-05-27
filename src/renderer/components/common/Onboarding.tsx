@@ -46,7 +46,7 @@ function Onboarding() {
       icon: <SunOutlined />,
       content: (
         <div className="onboarding-step">
-          <SunOutlined style={{ fontSize: 48, color: '#FF8C00' }} />
+          <SunOutlined style={{ fontSize: 48, color: 'var(--color-primary)' }} />
           <Title level={4}>欢迎使用全景 Panorama</Title>
           <Paragraph type="secondary">
             全能个人管理工具，帮您管理任务、客户、项目、财务和光伏业务。

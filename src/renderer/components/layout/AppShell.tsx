@@ -61,16 +61,14 @@ function AppShell({ children }: AppShellProps) {
       />
       <Layout>
         <Header
-          collapsed={sidebarCollapsed}
-          onToggleSidebar={() => setSidebarCollapsed(!sidebarCollapsed)}
           onOpenCommandPalette={handleToggleCommandPalette}
         />
         <Content
           style={{
-            height: 'calc(100vh - 56px)',
+            height: 'calc(100vh - 48px)',
             overflow: 'auto',
             backgroundColor: 'var(--bg-page)',
-            transition: 'background-color 0.3s',
+            transition: 'background-color 0.2s',
           }}
         >
           {children}

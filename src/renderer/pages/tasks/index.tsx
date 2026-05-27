@@ -106,7 +106,7 @@ function Tasks() {
   return (
     <div className="page-container">
       <div className="page-header">
-        <Title level={3} style={{ margin: 0, color: '#1E3A5F' }}>任务管理</Title>
+        <Title level={3} style={{ margin: 0, color: 'var(--text-primary)' }}>任务管理</Title>
         <Space>
           <Button icon={<UnorderedListOutlined />} type={viewMode === 'list' ? 'primary' : 'default'} onClick={() => setViewMode('list')}>列表</Button>
           <Button icon={<AppstoreOutlined />} type={viewMode === 'board' ? 'primary' : 'default'} onClick={() => setViewMode('board')}>看板</Button>

@@ -79,7 +79,7 @@ function CalendarPage() {
   return (
     <div className="page-container">
       <div className="page-header">
-        <Title level={3} style={{ margin: 0, color: '#1E3A5F' }}>
+        <Title level={3} style={{ margin: 0, color: 'var(--text-primary)' }}>
           日历
         </Title>
         <Space>

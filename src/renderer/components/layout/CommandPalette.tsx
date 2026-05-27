@@ -19,7 +19,7 @@ interface CommandPaletteProps {
 }
 
 const moduleIcons: Record<string, React.ReactNode> = {
-  tasks: <CheckSquareOutlined style={{ color: '#FF8C00' }} />,
+  tasks: <CheckSquareOutlined style={{ color: 'var(--color-primary)' }} />,
   customers: <TeamOutlined style={{ color: '#1890ff' }} />,
   projects: <ProjectOutlined style={{ color: '#52C41A' }} />,
   events: <CalendarOutlined style={{ color: '#722ED1' }} />,

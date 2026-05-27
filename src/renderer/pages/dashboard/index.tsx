@@ -112,7 +112,7 @@ function Dashboard() {
   return (
     <div className="page-container">
       <div className="page-header">
-        <Title level={3} style={{ margin: 0, color: '#1E3A5F' }}>仪表盘</Title>
+        <Title level={3} style={{ margin: 0, color: 'var(--text-primary)' }}>仪表盘</Title>
         <Space>
           <Button icon={<PlusOutlined />} onClick={() => navigate('/tasks')}>新建任务</Button>
         </Space>
@@ -125,8 +125,8 @@ function Dashboard() {
             <Statistic
               title="待办任务"
               value={pendingTasks.length}
-              prefix={<CheckCircleOutlined style={{ color: '#FF8C00' }} />}
-              valueStyle={{ color: '#FF8C00' }}
+              prefix={<CheckCircleOutlined style={{ color: 'var(--color-primary)' }} />}
+              valueStyle={{ color: 'var(--color-primary)' }}
             />
             <Text type="secondary" style={{ fontSize: 12 }}>
               {tasks.filter((t) => t.status === 'in_progress').length} 进行中
@@ -298,7 +298,7 @@ function Dashboard() {
           >
             {aiInsights.length === 0 && aiSuggestions.length === 0 ? (
               <div style={{ textAlign: 'center', paddingTop: 30 }}>
-                <RobotOutlined style={{ fontSize: 48, color: '#FF8C00', marginBottom: 16 }} />
+                <RobotOutlined style={{ fontSize: 48, color: 'var(--color-primary)', marginBottom: 16 }} />
                 <div>
                   <Text type="secondary">点击"分析"按钮，AI 将自动分析您的数据并提供智能建议</Text>
                 </div>
@@ -330,7 +330,7 @@ function Dashboard() {
                 )}
                 {aiSuggestions.length > 0 && (
                   <div>
-                    <Text strong><ThunderboltOutlined style={{ color: '#FF8C00' }} /> 建议</Text>
+                    <Text strong><ThunderboltOutlined style={{ color: 'var(--color-primary)' }} /> 建议</Text>
                     <List
                       size="small"
                       dataSource={aiSuggestions}
@@ -364,7 +364,7 @@ function Dashboard() {
                     <Statistic title="总任务" value={tasks.length} />
                   </Col>
                   <Col span={8}>
-                    <Statistic title="待处理" value={pendingTasks.length} valueStyle={{ color: '#FF8C00' }} />
+                    <Statistic title="待处理" value={pendingTasks.length} valueStyle={{ color: 'var(--color-primary)' }} />
                   </Col>
                   <Col span={8}>
                     <Statistic title="已完成" value={tasks.filter((t) => t.status === 'completed').length} valueStyle={{ color: '#52C41A' }} />

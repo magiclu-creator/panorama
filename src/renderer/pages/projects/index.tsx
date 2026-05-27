@@ -43,7 +43,7 @@ function Projects() {
   return (
     <div className="page-container">
       <div className="page-header">
-        <Title level={3} style={{ margin: 0, color: '#1E3A5F' }}>项目管理</Title>
+        <Title level={3} style={{ margin: 0, color: 'var(--text-primary)' }}>项目管理</Title>
         <Button type="primary" icon={<PlusOutlined />} onClick={() => setCreateModalOpen(true)}>新建项目</Button>
       </div>
       {projects.length === 0 && !loading ? (

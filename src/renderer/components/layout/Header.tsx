@@ -1,7 +1,5 @@
-import { Layout, Button, Badge, Tooltip, Space } from 'antd'
+import { Button, Badge, Tooltip, Space } from 'antd'
 import {
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
   SearchOutlined,
   BellOutlined,
   RobotOutlined,
@@ -11,80 +9,105 @@ import {
 import { useAppStore } from '../../stores/app.store'
 import { useTheme } from '../../contexts/ThemeContext'
 
-const { Header: AntHeader } = Layout
-
 interface HeaderProps {
-  collapsed: boolean
-  onToggleSidebar: () => void
   onOpenCommandPalette: () => void
 }
 
-function Header({ collapsed, onToggleSidebar, onOpenCommandPalette }: HeaderProps) {
+function Header({ onOpenCommandPalette }: HeaderProps) {
   const setAiPanelOpen = useAppStore((s) => s.setAiPanelOpen)
   const { darkMode, toggleDarkMode } = useTheme()
 
   return (
-    <AntHeader
+    <div
       style={{
-        height: 56,
-        lineHeight: '56px',
-        padding: '0 24px',
-        backgroundColor: 'var(--bg-card)',
+        height: 48,
+        padding: '0 20px',
+        background: 'var(--bg-card)',
         borderBottom: '1px solid var(--border-color)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        boxShadow: '0 1px 4px rgba(0, 0, 0, 0.05)',
-        transition: 'background-color 0.3s, border-color 0.3s',
+        flexShrink: 0,
+        transition: 'background 0.2s, border-color 0.2s',
       }}
     >
-      <Space size="middle">
-        <Button
-          type="text"
-          icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-          onClick={onToggleSidebar}
-          style={{ fontSize: 16 }}
-        />
-        <SearchOutlined
-          style={{ color: '#BFBFBF', fontSize: 16, cursor: 'pointer' }}
-          onClick={onOpenCommandPalette}
-        />
-        <span
-          style={{ color: 'var(--text-secondary)', cursor: 'pointer', fontSize: 14 }}
-          onClick={onOpenCommandPalette}
+      {/* Search */}
+      <div
+        onClick={onOpenCommandPalette}
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 8,
+          cursor: 'pointer',
+          padding: '4px 10px',
+          borderRadius: 4,
+          transition: 'background 0.1s',
+          color: 'var(--text-tertiary)',
+          fontSize: 13,
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.background = 'var(--bg-hover)'
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.background = 'transparent'
+        }}
+      >
+        <SearchOutlined style={{ fontSize: 14 }} />
+        <span>搜索...</span>
+        <kbd
+          style={{
+            fontFamily: 'var(--font-mono)',
+            fontSize: 11,
+            padding: '1px 5px',
+            borderRadius: 3,
+            background: 'var(--bg-elevated)',
+            border: '1px solid var(--border-color)',
+            color: 'var(--text-tertiary)',
+            lineHeight: '16px',
+          }}
         >
-          搜索... (Ctrl+K)
-        </span>
-      </Space>
+          Ctrl+K
+        </kbd>
+      </div>
 
-      <Space size="small">
+      {/* Actions */}
+      <Space size={4}>
         <Tooltip title={darkMode ? '浅色模式' : '深色模式'}>
           <Button
             type="text"
-            icon={darkMode ? <BulbFilled style={{ fontSize: 18, color: '#FAAD14' }} /> : <BulbOutlined style={{ fontSize: 18 }} />}
-            style={{ width: 40, height: 40 }}
+            size="small"
+            icon={
+              darkMode ? (
+                <BulbFilled style={{ fontSize: 15, color: '#ca8a04' }} />
+              ) : (
+                <BulbOutlined style={{ fontSize: 15, color: 'var(--text-secondary)' }} />
+              )
+            }
+            style={{ width: 32, height: 32 }}
             onClick={toggleDarkMode}
           />
         </Tooltip>
         <Tooltip title="AI 助手">
           <Button
             type="text"
-            icon={<RobotOutlined style={{ fontSize: 18, color: '#FF8C00' }} />}
-            style={{ width: 40, height: 40 }}
+            size="small"
+            icon={<RobotOutlined style={{ fontSize: 15, color: 'var(--color-primary)' }} />}
+            style={{ width: 32, height: 32 }}
             onClick={() => setAiPanelOpen(true)}
           />
         </Tooltip>
         <Tooltip title="通知">
-          <Badge count={0} size="small">
+          <Badge count={0} size="small" offset={[-2, 2]}>
             <Button
               type="text"
-              icon={<BellOutlined style={{ fontSize: 18 }} />}
-              style={{ width: 40, height: 40 }}
+              size="small"
+              icon={<BellOutlined style={{ fontSize: 15, color: 'var(--text-secondary)' }} />}
+              style={{ width: 32, height: 32 }}
             />
           </Badge>
         </Tooltip>
       </Space>
-    </AntHeader>
+    </div>
   )
 }
 

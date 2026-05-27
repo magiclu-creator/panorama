@@ -12,7 +12,7 @@ const stages: { key: string; title: string; color: string }[] = [
   { key: 'installation', title: '安装', color: '#faad14' },
   { key: 'commissioning', title: '调试', color: '#13c2c2' },
   { key: 'acceptance', title: '验收', color: '#52c41a' },
-  { key: 'operational', title: '运维', color: '#FF8C00' },
+  { key: 'operational', title: '运维', color: '#e87a35' },
 ]
 
 const systemTypeLabels: Record<string, string> = {

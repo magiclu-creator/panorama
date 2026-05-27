@@ -160,7 +160,7 @@ function Settings() {
   return (
     <div className="page-container">
       <div className="page-header">
-        <Title level={3} style={{ margin: 0, color: '#1E3A5F' }}>设置</Title>
+        <Title level={3} style={{ margin: 0, color: 'var(--text-primary)' }}>设置</Title>
       </div>
 
       {/* AI Config */}
